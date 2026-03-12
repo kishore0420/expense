@@ -6,10 +6,10 @@ metadata:
   labels:
     app: expense-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: expense
+      app: expense-app
   template:
     metadata:
       labels:
@@ -19,4 +19,4 @@ spec:
       - name: frontend-container
         image: kishoreking90/frontend:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8080

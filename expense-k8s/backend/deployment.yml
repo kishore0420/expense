@@ -6,7 +6,7 @@ metadata:
   labels:
     app: expense-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: expense-app
@@ -21,5 +21,5 @@ spec:
         ports:
         - containerPort: 8080
         envFrom:
-        - configMap:
+        - configMapRef:
             name: backend-config
