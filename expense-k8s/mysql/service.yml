@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: service
+metadata:
+  name: mysql
+  namespace: expense
+spec:
+  selector:
+    app: expense-app
+  ports:
+    - port: 3306
+      protocol: TCP
+      targetPort: 3306
+      NodePort: 32767  
+  type: NodePort

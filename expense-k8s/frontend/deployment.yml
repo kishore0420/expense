@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: expense
+  labels:
+    app: expense-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: expense
+  template:
+    metadata:
+      labels:
+        app: expense
+    spec:
+      containers:
+      - name: frontend-container
+        image: kishoreking90/frontend:v1
+        ports:
+        - containerPort: 80
